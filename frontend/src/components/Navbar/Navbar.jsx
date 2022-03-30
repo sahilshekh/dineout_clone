@@ -1,6 +1,31 @@
 import React from "react";
+import { Login } from "../Register/Login";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { userLogin } from "../../Redux/Login/action";
 import "./Navbar.css";
 const Navbar = () => {
+  const [model, setModel] = useState(false);
+
+  const dispatch = useDispatch();
+  const token = useSelector((store) => store.login.token);
+  const [userToken, setUserToken] = useState(token);
+
+  const localStorageToken = localStorage.getItem("token");
+  dispatch(userLogin(localStorageToken));
+
+  const handleProfilePage = () => {
+    document.getElementById("signsub").style.display = "block";
+  };
+
+  const handleLogout = () => {
+    dispatch(userLogin({}));
+    localStorage.setItem("token", "");
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="container">
@@ -50,10 +75,30 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="btn">
-            <button>Login</button>
+            {!userToken ? (
+              <button onClick={() => setModel(true)}>Login</button>
+            ) : (
+              <div className="profile">
+                <p>
+                  My Account{" "}
+                  <span onClick={handleProfilePage}>
+                    {<ArrowDropDownIcon />}
+                  </span>
+                </p>
+                <div id="signsub">
+                  <Link to={"/profile"}>
+                    <p>Profile</p>
+                  </Link>
+                  <p>Coupon History</p>
+                  <p onClick={handleLogout}>Logout</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {model ? <Login closeModel={setModel} /> : null}
     </>
   );
 };

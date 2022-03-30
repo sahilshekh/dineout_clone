@@ -97,3 +97,43 @@ ul li a:hover::before {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.profile {
+  position: relative;
+}
+.profile p {
+  padding-top: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.profile span {
+  display: flex;
+  align-content: center;
+  cursor: pointer;
+}
+#signsub {
+  display: none;
+  color: black;
+  background: #fff;
+  padding: 0.5rem;
+  position: absolute;
+  top: 45px;
+  right: -17px;
+  z-index: 11;
+  width: 110%;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+}
+
+#signsub p {
+  border-bottom: 1px solid #e9ebee;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
