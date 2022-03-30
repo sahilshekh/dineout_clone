@@ -40,9 +40,9 @@ function Dineout() {
                   <h3>Quick Filters</h3>
                   <input type="search" placeholder='Search'></input><br/><br/>
                   <Link to="/Dineout"><input type="checkbox"></input></Link>Dineout Pay<br/><br/>
-                  <input type="checkbox"></input><span>Pure Veg</span><br/><br/>
-                  <input type="checkbox"></input><span>5 Star</span><br/><br/>
-                  <input type="checkbox"></input><span>Buffet</span><br/><br/>
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>Pure Veg<br/><br/>
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>5 Star<br/><br/>
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>Buffet<br/><br/>
                   <p>Show More (4)</p>
 
                   <hr/>

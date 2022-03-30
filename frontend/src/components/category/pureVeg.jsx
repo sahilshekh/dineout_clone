@@ -1,34 +1,24 @@
 import React from 'react'
-import  './Booktable.css'
+import  '../Booktable/Booktables'
 import Navbar from '../Navbar/Navbar'
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Booktable() {
-  const [products, setProducts] = useState([]);
- 
+
+function PureVeg() {
+
+  const [pureveg, setPureveg]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/products").then((res) => {
+    axios.get("http://localhost:5500/pureveg").then((res) => {
       console.log(res.data);
-      setProducts([...res.data]);
+      setPureveg([...res.data]);
     });
   }, []);
 
 
-  var count = 0
-const clickMe = () => {
-  if(count ==0){
 
-    console.log("yeee")
-    count++
-
-  }else{
-    count --
-    return
-  }
-}
   
   return (
     <>
@@ -38,10 +28,10 @@ const clickMe = () => {
               <form>
                   <h3>Quick Filters</h3>
                   <input type="search" placeholder='Search'></input><br/><br/>
-                  <Link to="/Dineout"><input type="checkbox"></input></Link>Dineout pay<br/><br/>
-                  <Link to="/PureVeg"><input type="checkbox"></input></Link>Pure Veg<br/><br/>
-                 <Link to="/Star"><input type="checkbox"></input></Link>5 Star<br/><br/>
-                 <Link to="/Buffet"><input type="checkbox"></input></Link>Buffet<br/><br/>
+                  <input type="checkbox"></input><span>Dineout Pay</span><br/><br/>
+                  <input type="checkbox"></input><span>Pure Veg</span><br/><br/>
+                  <Link to="/Star"><input type="checkbox"></input></Link>5 Star<br/><br/>
+                  <input type="checkbox"></input><span>Buffet</span><br/><br/>
                   <p>Show More (4)</p>
 
                   <hr/>
@@ -65,7 +55,7 @@ const clickMe = () => {
           </div>
           <div className='dataDiv'>
               <div className="hotelData">
-                {products
+                {pureveg
                   .map((el) => {
                     return (
                       <div className="near-res-container" key={el._id}>
@@ -87,4 +77,4 @@ const clickMe = () => {
   )
 }
 
-export default Booktable
+export default PureVeg
