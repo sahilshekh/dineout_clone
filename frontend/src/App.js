@@ -1,10 +1,8 @@
-// import Home from './components/Home/Home';
-import { AllRoutes } from "./Routes/Routes";
+import Home from './components/Home/Home';
 function App() {
   return (
     <div className="App">
-    <AllRoutes/>
-      {/* <Home /> */}
+      <Home />
     </div>
   );
 }
