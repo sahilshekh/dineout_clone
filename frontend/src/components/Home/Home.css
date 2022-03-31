@@ -43,6 +43,8 @@
 .near-img {
   overflow: hidden;
   height: 62%;
+  border-bottom: 2px solid orangered;
+  border-radius: 5px;
 }
 .near-img img {
   width: 100%;
@@ -106,6 +108,8 @@
 .offer-img {
   overflow: hidden;
   height: 64%;
+  border-bottom: 2px solid orangered;
+  border-radius: 5px;
 }
 .offer-img img {
   width: 100%;
