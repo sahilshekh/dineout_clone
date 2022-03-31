@@ -1,28 +1,69 @@
 .main_Booktable{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 70%;
-    height: auto;
+    height: 20px;
     margin: auto;
     display: flex;
 }
 .sideBar{
-    width: 30%;
-    height: auto;
-    border: 1px solid green;
+    width: 28%;
+    height: 1100px;
+    /* border: 1px solid green; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .dataDiv{
-    width: 70%;
+    width: 66%;
     height: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    margin-left: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .hotelData{
   height: auto;
   display: grid;
-  grid-template-columns: repeat(3, 30%);
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, 33%);
+  grid-gap: 10px;
+  /* margin-top: 10px; */
 }
 .hotelData-container{
   width: 90%;
   border-radius: 5px;
   transition: 0.3s ease-in;
+}
+.plus{
+  margin-left: 120px;
+}
+.plus2{
+  margin-left: 42px;
+}
+.p2{
+  margin-top: 40px;
+}
+.h3{
+  margin-left: 15px;
+  color: gray;
+}
+.substract{
+  margin-left: 100px;
+  color: gray;
+}
+.substract2{
+  margin-left: 135px;
+}
+.substract3{
+  margin-left: 170px;
+}
+.serch{
+  margin-left: 15px;
+}
+.checkbox{
+  margin-left: 15px;
+  color: gray;
+}
+.more{
+  margin-left: 15px;
+  color: gray;
+}
+.clor{
+  color: gray;
 }
