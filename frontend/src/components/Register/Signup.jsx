@@ -100,6 +100,7 @@ const Style = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    cursor: pointer;
     .gmail {
       height: 40px;
       width: 176px;

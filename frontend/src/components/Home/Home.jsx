@@ -13,8 +13,6 @@ const Home = () => {
     });
   }, []);
 
-  
-
   return (
     <>
       <div className="navbar">
@@ -52,7 +50,9 @@ const Home = () => {
               .map((el) => {
                 return (
                   <div className="near-res-container" key={el._id}>
-                    <img src={el.images} alt="Restaurant" />
+                    <div className="near-img">
+                      <img src={el.images} alt="Restaurant" />
+                    </div>
                     <div className="near-res-details">
                       <h3>{el.title}</h3>
                       <p>{el.address + ", " + el.place}</p>
@@ -72,7 +72,9 @@ const Home = () => {
               .map((el) => {
                 return (
                   <div className="near-res-container" key={el._id}>
-                    <img src={el.images} alt="Restaurant" />
+                    <div className="near-img">
+                      <img src={el.images} alt="Restaurant" />
+                    </div>
                     <div className="near-res-details">
                       <h3>{el.title}</h3>
                       <p>{el.address + ", " + el.place}</p>
@@ -97,7 +99,9 @@ const Home = () => {
               .map((el) => {
                 return (
                   <div className="offer-res-container" key={el._id}>
-                    <img src={el.images} alt="Restaurant" />
+                    <div className="offer-img">
+                      <img src={el.images} alt="Restaurant" />
+                    </div>
                     <div className="offer-res-details">
                       <h3>{el.title}</h3>
                       <p>{el.address + ", " + el.place}</p>

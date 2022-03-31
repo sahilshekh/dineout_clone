@@ -30,6 +30,10 @@ const Navbar = () => {
     setUserToken("");
   };
 
+  const cityData = localStorage.getItem("cityData");
+  const city = JSON.parse(cityData);
+  const [cities, setCities] = useState(city);
+
   return (
     <>
       <div className="container">
@@ -44,10 +48,10 @@ const Navbar = () => {
           </div>
           <div className="select">
             <select name="city" id="city-select">
-              <option value="volvo">Indore</option>
-              <option value="saab">Mumbai</option>
-              <option value="mercedes">Delhi</option>
-              <option value="audi">Banglore</option>
+              <option value="volvo">
+                {" "}
+                {cities ? cities : setCities("NO City Found")}
+              </option>
             </select>
           </div>
 

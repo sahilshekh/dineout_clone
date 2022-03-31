@@ -16,7 +16,14 @@ const Profile = () => {
         <div className="mainprofile">
           <div className="smallcont">
             <div className="profile-img">
-              <img src={userData.photoURL} alt="profilepicture" />
+              <img
+                src={
+                  true
+                    ? userData.photoURL
+                    : "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png"
+                }
+                alt="profilepicture"
+              />
             </div>
             <div className="profiledetail">
               <p className="name">
