@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 function Booktable() {
   const [products, setProducts] = useState([]);
+ 
 
   useEffect(() => {
     axios.get("http://localhost:5500/products").then((res) => {
@@ -14,20 +15,9 @@ function Booktable() {
       setProducts([...res.data]);
     });
   }, []);
-  var count = 0
-// const clickMe = () => {
-//   if(count ==0){
-//     let brand = "chinese"
-//     let response = axios.get(`http://localhost:5500/products/filter?type=${brand}`);
-//     let data =  response.json();
-//     console.log("yeee",data)
-//     count++
 
-//   }else{
-//     count --
-//     return
-//   }
-// }
+
+
   
   return (
     <>
@@ -37,10 +27,14 @@ function Booktable() {
               <form>
                   <h3>Quick Filters</h3>
                   <input type="search" placeholder='Search'></input><br/><br/>
-                  <input type="checkbox"></input><span>Dineout Pay</span><br/><br/>
-                  <input type="checkbox"></input><span>Pure Veg</span><br/><br/>
-                  <Link to="/Star"><input type="checkbox"></input></Link>5 Star<br/><br/>
-                  <input type="checkbox"></input><span>Buffet</span><br/><br/>
+
+                  
+
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>Dineout pay<br/><br/>
+                  <Link to="/PureVeg"><input type="checkbox"></input></Link>Pure Veg<br/><br/>
+                 <Link to="/Star"><input type="checkbox"></input></Link>5 Star<br/><br/>
+                 <Link to="/Buffet"><input type="checkbox"></input></Link>Buffet<br/><br/>
+
                   <p>Show More (4)</p>
 
                   <hr/>
@@ -78,6 +72,7 @@ function Booktable() {
                       </div>
                     );
                   })}
+                  
               </div>
           </div>
         </div>

@@ -6,19 +6,30 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-function Star() {
+function Dineout() {
 
-  const [star,setStar]= useState([]);
+  const [dineout, setDinprod]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/star").then((res) => {
-      console.log("5star data",res.data);
-      setStar([...res.data]);
+    axios.get("http://localhost:5500/dineout").then((res) => {
+      console.log(res.data);
+      setDinprod([...res.data]);
     });
   }, []);
 
 
+//   var count = 0
+// const clickMe = () => {
+//   if(count ==0){
 
+//     console.log("yeee")
+//     count++
+
+//   }else{
+//     count --
+//     return
+//   }
+// }
   
   return (
     <>
@@ -28,11 +39,10 @@ function Star() {
               <form>
                   <h3>Quick Filters</h3>
                   <input type="search" placeholder='Search'></input><br/><br/>
-                  <input type="checkbox"></input><span>Dineout Pay</span><br/><br/>
-                  <input type="checkbox"></input><span>Pure Veg</span><br/><br/>
-                  <input type="checkbox"></input><span>5 Star</span><br/><br/>
-                  <Link to="/Buffet"><input type="checkbox"></input></Link>Buffet<br/><br/>
-                  
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>Dineout Pay<br/><br/>
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>Pure Veg<br/><br/>
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>5 Star<br/><br/>
+                  <Link to="/Dineout"><input type="checkbox"></input></Link>Buffet<br/><br/>
                   <p>Show More (4)</p>
 
                   <hr/>
@@ -56,7 +66,7 @@ function Star() {
           </div>
           <div className='dataDiv'>
               <div className="hotelData">
-                {star
+                {dineout
                   .map((el) => {
                     return (
                       <div className="near-res-container" key={el._id}>
@@ -78,4 +88,4 @@ function Star() {
   )
 }
 
-export default Star
+export default Dineout

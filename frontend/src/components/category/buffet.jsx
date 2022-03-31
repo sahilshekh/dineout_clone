@@ -6,14 +6,14 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-function Star() {
+function Buffet() {
 
-  const [star,setStar]= useState([]);
+  const [buffet,setBuffet]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/star").then((res) => {
-      console.log("5star data",res.data);
-      setStar([...res.data]);
+    axios.get("http://localhost:5500/buffet").then((res) => {
+      console.log(res.data);
+      setBuffet([...res.data]);
     });
   }, []);
 
@@ -56,7 +56,7 @@ function Star() {
           </div>
           <div className='dataDiv'>
               <div className="hotelData">
-                {star
+                {buffet
                   .map((el) => {
                     return (
                       <div className="near-res-container" key={el._id}>
@@ -78,4 +78,4 @@ function Star() {
   )
 }
 
-export default Star
+export default Buffet

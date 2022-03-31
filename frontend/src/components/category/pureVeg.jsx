@@ -6,14 +6,14 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-function Star() {
+function PureVeg() {
 
-  const [star,setStar]= useState([]);
+  const [pureveg, setPureveg]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/star").then((res) => {
-      console.log("5star data",res.data);
-      setStar([...res.data]);
+    axios.get("http://localhost:5500/pureveg").then((res) => {
+      console.log(res.data);
+      setPureveg([...res.data]);
     });
   }, []);
 
@@ -30,9 +30,8 @@ function Star() {
                   <input type="search" placeholder='Search'></input><br/><br/>
                   <input type="checkbox"></input><span>Dineout Pay</span><br/><br/>
                   <input type="checkbox"></input><span>Pure Veg</span><br/><br/>
-                  <input type="checkbox"></input><span>5 Star</span><br/><br/>
-                  <Link to="/Buffet"><input type="checkbox"></input></Link>Buffet<br/><br/>
-                  
+                  <Link to="/Star"><input type="checkbox"></input></Link>5 Star<br/><br/>
+                  <input type="checkbox"></input><span>Buffet</span><br/><br/>
                   <p>Show More (4)</p>
 
                   <hr/>
@@ -56,7 +55,7 @@ function Star() {
           </div>
           <div className='dataDiv'>
               <div className="hotelData">
-                {star
+                {pureveg
                   .map((el) => {
                     return (
                       <div className="near-res-container" key={el._id}>
@@ -78,4 +77,4 @@ function Star() {
   )
 }
 
-export default Star
+export default PureVeg

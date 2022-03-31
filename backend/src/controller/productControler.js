@@ -19,6 +19,14 @@ router.get("",async(req,res)=>{
         return res.status(500).send({message:error.message})
     }
 })
+router.get("/:id",async(req,res)=>{
+    try {
+        const product=await Product.findById(req.params.id).lean().exec();
+        return res.status(201).send(product)
+    } catch (error) {
+        return res.status(500).send({message:error.message})
+    }
+})
 
 router.get("/:id", async(req,res)=>{
     try{
