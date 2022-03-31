@@ -1,8 +1,9 @@
 const express = require("express");
-const cors = require("cors");
+
+const cors=require("cors")
 
 const app = express();
-app.use(cors())
+
 const connect = require("./configs/db")
 const productControler = require("./controller/productControler")
 
@@ -11,19 +12,11 @@ const northindiaController = require("./controller/northindiacontroller")
 const chineseController = require("./controller/chineseController")
 const fastfoodController = require("./controller/fastfoodController")
 
-
-
-
-
-
+app.use(cors())
 app.use("/star", starController)
 app.use("/northindia", northindiaController)
 app.use("/chinese", chineseController)
 app.use("/fastfood", fastfoodController)
-
-
-
-
 
 const dineoutController=require("./controller/dineoutController")
 const PureVegController=require("./controller/PureVegController")
