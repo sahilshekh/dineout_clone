@@ -1,34 +1,22 @@
 import React from 'react'
-import  './Booktable.css'
+import  '../Booktable/Booktables'
 import Navbar from '../Navbar/Navbar'
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Booktable() {
-  const [products, setProducts] = useState([]);
+function Chinese() {
+
+    const [chinese,setNorth]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/products").then((res) => {
+    axios.get("http://localhost:5500/chinese").then((res) => {
       console.log(res.data);
-      setProducts([...res.data]);
+      setNorth([...res.data]);
     });
   }, []);
-  var count = 0
-// const clickMe = () => {
-//   if(count ==0){
-//     let brand = "chinese"
-//     let response = axios.get(`http://localhost:5500/products/filter?type=${brand}`);
-//     let data =  response.json();
-//     console.log("yeee",data)
-//     count++
 
-//   }else{
-//     count --
-//     return
-//   }
-// }
-  
+
   return (
     <>
         <Navbar/>
@@ -39,17 +27,18 @@ function Booktable() {
                   <input type="search" placeholder='Search'></input><br/><br/>
                   <input type="checkbox"></input><span>Dineout Pay</span><br/><br/>
                   <input type="checkbox"></input><span>Pure Veg</span><br/><br/>
-                  <Link to="/Star"><input type="checkbox"></input></Link>5 Star<br/><br/>
-                  <input type="checkbox"></input><span>Buffet</span><br/><br/>
+                  <input type="checkbox"></input><span>5 Star</span><br/><br/>
+                  <Link to="/Buffet"><input type="checkbox"></input></Link>Buffet<br/><br/>
+                  
                   <p>Show More (4)</p>
 
                   <hr/>
 
                   <h3>Cuisines</h3>
                   <input type="search" placeholder='Search For Cuisine'></input><br/><br/>
-                  <Link to="/NorthIndia"><p>North Indian</p></Link><br/><br/>
-                  <Link to="/Chinese">Chinese</Link><br/>
-                  <Link to="/Fast">Fast Food</Link><br/>
+                  <p>North Indian</p>
+                  <p>Chinese</p>
+                  <p>Fast Food</p>
                   <p>Continental</p>
                   <p>Show More (60)</p>
 
@@ -64,7 +53,7 @@ function Booktable() {
           </div>
           <div className='dataDiv'>
               <div className="hotelData">
-                {products
+                {chinese
                   .map((el) => {
                     return (
                       <div className="near-res-container" key={el._id}>
@@ -78,6 +67,7 @@ function Booktable() {
                       </div>
                     );
                   })}
+                  
               </div>
           </div>
         </div>
@@ -85,4 +75,4 @@ function Booktable() {
   )
 }
 
-export default Booktable
+export default Chinese
