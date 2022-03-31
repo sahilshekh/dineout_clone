@@ -6,9 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { userLogin } from "../../Redux/Login/action";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [model, setModel] = useState(false);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((store) => store.login.token);
   const [userToken, setUserToken] = useState(token);
@@ -23,7 +24,10 @@ const Navbar = () => {
   const handleLogout = () => {
     dispatch(userLogin({}));
     localStorage.setItem("token", "");
+    localStorage.setItem("auth", JSON.stringify({}));
+    navigate("/");
     window.location.reload();
+    setUserToken("");
   };
 
   return (
@@ -31,12 +35,12 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-main">
           <div className="logo">
-            <a href="">
+            <Link to="/">
               <img
                 src="https://im1.dineout.co.in/images/uploads/misc/2019/Jul/25/website-logo.png"
                 alt="logo"
               />
-            </a>
+            </Link>
           </div>
           <div className="select">
             <select name="city" id="city-select">
@@ -50,27 +54,27 @@ const Navbar = () => {
           <div className="list-items">
             <ul>
               <li>
-                <a href="" className="home-btn">
+                <Link to="/" className="home-btn">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="">Book a Table</a>
+                <Link to="">Book a Table</Link>
               </li>
               <li>
-                <a href="">Dineout Pay</a>
+                <Link to="">Dineout Pay</Link>
               </li>
               <li>
-                <a href="">Dineout Passport</a>
+                <Link to="">Dineout Passport</Link>
               </li>
               <li>
-                <a href="">Events</a>
+                <Link to="">Events</Link>
               </li>
               <li>
-                <a href="">Super Saver</a>
+                <Link to="">Super Saver</Link>
               </li>
               <li>
-                <a href="">Blog</a>
+                <Link to="">Blog</Link>
               </li>
             </ul>
           </div>

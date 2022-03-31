@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { auth } from "../Firebase/Firebase.confiq";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
