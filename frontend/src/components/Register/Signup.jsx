@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { auth } from "../Firebase/Firebase.confiq";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 const Style = styled.div`
   .modelback {
     width: 100%;
@@ -193,7 +196,18 @@ export const Signup = ({ closeSignup, closeLogin }) => {
   };
 
   const handleGoogleAuth = () => {
-    window.location.href = "http://localhost:5500/auth/google";
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem("auth", JSON.stringify(res.user));
+        localStorage.setItem("token", res.user.stsTokenManager.accessToken);
+        closeSignup(false);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
