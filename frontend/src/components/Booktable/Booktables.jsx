@@ -3,6 +3,7 @@ import  './Booktable.css'
 import Navbar from '../Navbar/Navbar'
 import axios from "axios";
 import { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
 function Booktable() {
   const [products, setProducts] = useState([]);
@@ -23,6 +24,13 @@ const clickMe = () => {
     count --
     return
   }
+}
+
+const navigate = useNavigate()
+
+const handleHotel = (e) => {
+  localStorage.setItem("hotel",JSON.stringify(e))
+  navigate(`/Booktable/${e.title}`)
 }
   
   return (
@@ -63,7 +71,7 @@ const clickMe = () => {
                 {products
                   .map((el) => {
                     return (
-                      <div className="near-res-container" key={el._id}>
+                      <div className="near-res-container" key={el._id} onClick={() =>handleHotel(el)}>
                         <img src={el.images} alt="Restaurant" />
                         {/* <div className="near-res-details"> */}
                           <h3>{el.title}</h3>

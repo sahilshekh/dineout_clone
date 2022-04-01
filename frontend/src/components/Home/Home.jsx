@@ -3,6 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+
+
 const Home = () => {
   const [products, setProducts] = useState([]);
 
@@ -108,6 +110,8 @@ const Home = () => {
       </div>
       <div className="footer">
         <Footer />
+        <br />
+        <br />
       </div>
     </>
   );
