@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5500/products").then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       setProducts([...res.data]);
     });
   }, []);
