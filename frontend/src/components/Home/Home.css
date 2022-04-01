@@ -40,9 +40,15 @@
 .near-res-container:hover {
   box-shadow: 10px 10px 6px -9px grey;
 }
-.near-res-container img {
+.near-img {
+  overflow: hidden;
+  height: 62%;
+  border-bottom: 2px solid orangered;
+  border-radius: 5px;
+}
+.near-img img {
   width: 100%;
-  height: 60%;
+  height: 100%;
   border-radius: 5px;
   object-fit: cover;
   transition: 0.8s;
@@ -99,9 +105,15 @@
 .offer-res-container:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.offer-res-container img {
+.offer-img {
+  overflow: hidden;
+  height: 64%;
+  border-bottom: 2px solid orangered;
+  border-radius: 5px;
+}
+.offer-img img {
   width: 100%;
-  height: 60%;
+  height: 100%;
   border-radius: 5px;
   object-fit: cover;
   transition: 0.8s;
@@ -112,6 +124,7 @@
 }
 .offer-res-details {
   padding: 4px;
+  margin-top: 10px;
 }
 .offer-res-details h3 {
   margin: 0;
