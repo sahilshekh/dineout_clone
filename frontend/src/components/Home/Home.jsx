@@ -3,7 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -12,6 +15,11 @@ const Home = () => {
       setProducts([...res.data]);
     });
   }, []);
+
+  const handleHotel = (e) => {
+    localStorage.setItem("hotel", JSON.stringify(e));
+    navigate(`/Booktable/${e.title}`);
+  };
 
   return (
     <>
@@ -49,7 +57,11 @@ const Home = () => {
               .filter((_, index) => index % 6 === 0)
               .map((el) => {
                 return (
-                  <div className="near-res-container" key={el._id}>
+                  <div
+                    className="near-res-container"
+                    onClick={() => handleHotel(el)}
+                    key={el._id}
+                  >
                     <div className="near-img">
                       <img src={el.images} alt="Restaurant" />
                     </div>
@@ -71,7 +83,11 @@ const Home = () => {
               .filter((_, index) => index % 6 === 1)
               .map((el) => {
                 return (
-                  <div className="near-res-container" key={el._id}>
+                  <div
+                    className="near-res-container"
+                    onClick={() => handleHotel(el)}
+                    key={el._id}
+                  >
                     <div className="near-img">
                       <img src={el.images} alt="Restaurant" />
                     </div>
@@ -98,7 +114,11 @@ const Home = () => {
               .filter((_, index) => index % 6 === 1)
               .map((el) => {
                 return (
-                  <div className="offer-res-container" key={el._id}>
+                  <div
+                    className="offer-res-container"
+                    onClick={() => handleHotel(el)}
+                    key={el._id}
+                  >
                     <div className="offer-img">
                       <img src={el.images} alt="Restaurant" />
                     </div>
