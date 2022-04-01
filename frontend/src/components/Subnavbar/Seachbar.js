@@ -10,7 +10,7 @@ export const Searchbar = () =>{
    React.useEffect(()=>{
       const loadPosts = async () =>{
          setloading(true);
-         const response = await axios.get("http://localhost:5500/products");
+         const response = await axios.get("http://localhost:5500/star");
         // console.log(response.data);
          setpost(response.data);
          setloading(false);
@@ -20,7 +20,7 @@ export const Searchbar = () =>{
 
     return(
         <form className="d-flex">
-         <input className="serach_option_bar" type="search" placeholder="Search for Restaurants,Offers,Deals Or Events....." aria-label="Search" onChange={(e) => setserachtitle(e.target.value)}/>
+         <input className="serach_option_bar" type="search" placeholder="Search for Restaurants,Offers,Deals Or Events....."  onChange={(e) => setserachtitle(e.target.value)}/>
             <div className="Search_content">
             {loading ? (
                <h4>Loading ....</h4>

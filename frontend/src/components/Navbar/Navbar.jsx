@@ -38,7 +38,7 @@ const Navbar = () => {
                 <a href="">Dineout Pay</a>
               </li>
               <li>
-                <a href="">Dineout Passport</a>
+              <Link to="/Dineoutpassport">Dineout Passport</Link>
               </li>
               <li>
                 <a href="">Events</a>

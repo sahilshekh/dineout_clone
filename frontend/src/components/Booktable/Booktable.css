@@ -1,6 +1,9 @@
 body{
   background-color: #F4F4F4;
 }
+.trjs{
+  margin-top: 200px;
+}
 .main_Booktable{
     /* border: 1px solid black; */
     width: 70%;

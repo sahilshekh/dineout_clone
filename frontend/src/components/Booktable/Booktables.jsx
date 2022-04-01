@@ -1,10 +1,13 @@
 import React from 'react'
 import  './Booktable.css'
-import Navbar from '../Navbar/Navbar'
+// import Navbar from '../Navbar/Navbar'
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaGreaterThan } from "react-icons/fa";
+import Subnavbar from '../Subnavbar/Subnavbar';
+import '../Subnavbar/Navbar1.css'
+import {useNavigate} from "react-router-dom"
 
 function Booktable() {
   const [products, setProducts] = useState([]);
@@ -17,12 +20,18 @@ function Booktable() {
     });
   }, []);
 
+  const navigate = useNavigate()
+  const handleHotel = (e) => {
+  localStorage.setItem("hotel",JSON.stringify(e))
+  navigate(`/Booktable/${e.title}`)
+}
 
 
   
   return (
-    <>
-        <Navbar/>
+    <>  
+        <Subnavbar/>
+        <div className='trjs'></div>
         <div className='main_Booktable'>
           <div className='sideBar'>
               <form>
@@ -86,7 +95,7 @@ function Booktable() {
                 {products
                   .map((el) => {
                     return (
-                      <div className="hotelData-container" key={el._id}>
+                      <div className="hotelData-container" onClick={() =>handleHotel(el)} key={el._id}>
                         <img src={el.images} alt="Restaurant" />
                         <div className="hotelData-details">
                           <h3>{el.title}</h3>

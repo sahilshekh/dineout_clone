@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import axios from 'axios'
-import '../components/Navbar.css'
+// import axios from 'axios'
+import '../Subnavbar/Navbar1.css'
 import {navItems} from './NavbarItems'
 import Dropdown from './Dropdown';
 import { Searchbar } from './Seachbar';
@@ -18,7 +18,7 @@ const Subnavbar = () => {
    return(
        <>
         <nav className='main_nav'>
-           <div className='navbar'>
+           <div className='navbar1'>
            <Link to ="/"><img src="https://im1.dineout.co.in/images/uploads/misc/2019/Jul/25/website-logo.png" width="100px"></img></Link>
            
            <Dropdown selected={selected} setselected={setselected}/>
