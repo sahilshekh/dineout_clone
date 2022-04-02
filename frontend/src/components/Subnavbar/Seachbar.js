@@ -10,7 +10,7 @@ export const Searchbar = () =>{
    React.useEffect(()=>{
       const loadPosts = async () =>{
          setloading(true);
-         const response = await axios.get("http://localhost:5500/star");
+         const response = await axios.get("https://dineout-project.herokuapp.com/star");
         // console.log(response.data);
          setpost(response.data);
          setloading(false);

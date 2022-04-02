@@ -11,7 +11,7 @@ function NorthIndia() {
   const [northIndia,setNorth]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/northindia").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/northindia").then((res) => {
       console.log(res.data);
       setNorth([...res.data]);
     });

@@ -14,7 +14,7 @@ function Booktable() {
  
 
   useEffect(() => {
-    axios.get("http://localhost:5500/products").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/products").then((res) => {
       console.log(res.data);
       setProducts([...res.data]);
     });

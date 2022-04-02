@@ -178,7 +178,7 @@ export const Login = ({ closeModel }) => {
 
   const handleLogin = () => {
     axios
-      .post("http://localhost:5500/login", {
+      .post("https://dineout-project.herokuapp.com/login", {
         phone: phone,
       })
       .then((response) => {

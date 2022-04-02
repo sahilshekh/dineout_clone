@@ -10,7 +10,7 @@ const Overview = () => {
     const [randomarr, setRandomarr] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5500/products")
+        fetch("https://dineout-project.herokuapp.com/products")
         .then((res) => res.json())
         .then((res)=> {
             setState([...res])

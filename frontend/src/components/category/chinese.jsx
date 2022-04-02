@@ -11,7 +11,7 @@ function Chinese() {
     const [chinese,setNorth]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/chinese").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/chinese").then((res) => {
       console.log(res.data);
       setNorth([...res.data]);
     });

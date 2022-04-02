@@ -13,7 +13,7 @@ function Star() {
   const [star,setStar]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/star").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/star").then((res) => {
       console.log("5star data",res.data);
       setStar([...res.data]);
     });
