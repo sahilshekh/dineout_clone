@@ -6,7 +6,7 @@ export function Counter({getcounter}){
        setCounter(counter + value); 
     }
     return (
-    <div className="Counter"> Guest:
+    <div className="Counter1"> Guest:
         <button className = "incbtn" onClick = {()=>{incCounter(1)}}>+</button>
         <p className="counter_display">{counter}</p>
         

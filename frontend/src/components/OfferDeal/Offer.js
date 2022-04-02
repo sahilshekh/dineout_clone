@@ -36,8 +36,8 @@ const Offer = () => {
        <>
         {/* <div className='blank'></div> */}
           
-           <div className='Offer_deal'>
-               <div className='Select_offer'>Select an a Offer or Deal</div>
+           <div className='Offer_deal1'>
+               <div className='Select_offer1'>Select an a Offer or Deal</div>
            <Calendar1 getvalue = {getvalue} />
            <div className='Detail'>
            <label>Enter Guest Details</label>

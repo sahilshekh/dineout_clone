@@ -9,7 +9,7 @@ const Calendar1 = ({getvalue}) =>{
     getvalue(value);
     
     return (
-      <div className='my_calender'>
+      <div className='my_calender1'>
         <Calendar onChange={onChange} value={value} />
         {value.toString()}
         </div>
