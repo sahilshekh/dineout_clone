@@ -24,18 +24,21 @@ function Checkout() {
       <Subnavbar/>
    <div className='checki'>
            <div className='cheki1'><h1>{title}</h1>
-                <h1>{address}</h1>
-           </div><hr />
+                <p>{address}, {cityName}</p>
+           </div><div className="hr"></div>
            <div className='cheki1_guest'>
-            <h2>{Guestname}</h2>
-            <h2>{GuestMobile}</h2>
+             <h1>Guest Deatils</h1>
+            <h2><span>Guest Name:</span><span>{Guestname}</span></h2>
+            <h2><span>Phone no:</span><span>{GuestMobile}</span></h2>
            </div>
-           <hr />
+           <div className="hr"></div>
            <div className='cheki1_summery'>
-      <h2>{Datetime}</h2>
-      <h2>{Counter}</h2>
-      <h2>{Guestname}</h2>
-        <h3>D015247509</h3>
+             <h1>Booking  Summary</h1>
+             <h2><span>Table Status - Confirmed</span><span>Your reservation is confirmed! Happy Dining</span></h2>
+             <h2><span>Date & Time</span><span>{Datetime}</span></h2>
+             <h2><span>Guests</span><span>{Counter}</span></h2>
+             <h2><span>Name</span><span>{Guestname}</span></h2>
+              <h3><span>ID</span><span>D015247509</span></h3>
 
            </div>
    </div>

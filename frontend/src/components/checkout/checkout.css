@@ -201,11 +201,72 @@ body{
 .checki{
     margin: auto;
     margin-top: 10%;
-    border: 1px solid gray;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 70%;
     height: 600px;
+    margin-bottom: 50px;
     text-align: center;
 }
-.cheki1{
-    
+.cheki1 > h1{
+    padding-top: 3px;
+}
+hr{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cheki1 > p{
+    font-size: 20px;
+    color: gray;
+}
+.cheki1_guest > h1{
+    font-size: 30px;
+    text-align: left;
+    padding-left: 20px;
+    font-weight: normal;
+}
+.cheki1_guest > h2 {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.cheki1_guest > h2 > span:nth-child(1){
+    color: gray;
+    font-weight: normal;
+}
+.cheki1_guest > h2 > span:nth-child(2){
+    font-weight: 500;
+}
+.cheki1_summery > h1{
+    font-size: 30px;
+    text-align: left;
+    padding-left: 20px;
+    font-weight: normal;
+}
+.cheki1_summery > h2,h3{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.cheki1_summery > h2 > span:nth-child(1){
+    color: gray;
+    font-weight: normal;
+}
+.cheki1_summery > h2 > span:nth-child(2){
+    font-weight: 500;
+}
+.cheki1_summery > h3 > span:nth-child(1){
+    color: gray;
+    font-weight: normal;
+}
+.cheki1_summery > h3 > span:nth-child(2){
+    font-weight: 500;
+}
+.hr{
+    height: 5px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    border: none;
+    background-color: rgb(197, 194, 194);
 }
