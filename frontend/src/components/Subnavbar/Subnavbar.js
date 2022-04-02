@@ -27,12 +27,12 @@ const Subnavbar = () => {
            </div>
 
            
-           <div className='navbar2'>
+           <div className='navbar21'>
            <ul className='nav-items'>
               {navItems.map(item => {
                  return(
                 <li key ={item.id} className={item.cName}>
-                   <Link to={item.path}>{item.title}</Link>
+                   <Link to={item.path} className="nav213">{item.title}</Link>
                 </li>
                  )
               })}

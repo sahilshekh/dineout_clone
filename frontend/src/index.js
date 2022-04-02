@@ -6,6 +6,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider as ReduxProvider } from "react-redux";
 import { store } from "./Redux/store";
+import 'react-calendar/dist/Calendar.css';
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Calendar1 from './Calender';
 import { Counter } from './Counter';
 import './Offer.css'
+import { Link } from 'react-router-dom';
 
  
 
@@ -33,15 +34,8 @@ const Offer = () => {
 
    return(
        <>
-        <div className='blank'></div>
-           {/* <div className='home'>
-               <div className='blank'></div>
-               <p>
-               In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is
-               In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is
-               In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is
-               </p>
-           </div> */}
+        {/* <div className='blank'></div> */}
+          
            <div className='Offer_deal'>
                <div className='Select_offer'>Select an a Offer or Deal</div>
            <Calendar1 getvalue = {getvalue} />
@@ -56,7 +50,8 @@ const Offer = () => {
            <p>Choose the number of guests going</p>
            <br/>
            <Counter getcounter={getcounter}/>
-           <button className='confirm_btn' onClick={saveGuestdata}>Continue</button>
+           <Link to="/Checkout"><button className='confirm_btn' onClick={saveGuestdata}>Continue</button></Link>
+          
            </div>
            </div>
        </>

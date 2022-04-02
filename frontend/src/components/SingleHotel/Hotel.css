@@ -1,13 +1,16 @@
 
 .Hotel-container{
+    border: 1px solid red;
     background-color: rgb(244,244,244) ;
     padding-left: 15%;
 }
 .upperone{
+    
     color:gray;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
+    margin-top: 10%;
 }
 .image{
     padding: 10px;
@@ -55,3 +58,6 @@
     color:rgb(62,151,254);
     cursor: pointer;
 }
+/* .leftinav{
+    border: 1px solid red;
+} */

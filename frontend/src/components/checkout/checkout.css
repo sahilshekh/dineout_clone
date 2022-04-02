@@ -17,18 +17,13 @@ body{
     justify-content: center;
     align-items: center;
 }
-.nav213:hover{
- color: #fc5d51;
-}
-.navbar21{
-    height: 5vh;
+.navbar2{
+    height: 8vh;
     background:white;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 8px 6px -6px rgb(0,0,0,0.06);
+    box-shadow: 3px 3px 10px 6px rgb(0,0,0,0.06);
     padding: 10px;
-    font-size: 20px;
-    border-top: 1px solid gray;
 }
 .blank{
     height: 20vh;
@@ -59,7 +54,7 @@ body{
     width: 100px;
     cursor: pointer;
 }
-.navbar21 .nav-items{
+.navbar2 .nav-items{
     display: flex;
     list-style-type:none;
     text-align: center;
@@ -67,11 +62,11 @@ body{
     /* width: 70vw; */
     margin-right: 2rem;
 }
-.navbar21 .nav-item{
+.navbar2 .nav-item{
     display: flex;
     align-items: center;
 }
-.navbar21 .nav-item a{
+.navbar2 .nav-item a{
     text-decoration: none;
     margin-right: 2rem;
     color: black;
@@ -131,4 +126,76 @@ body{
     cursor: pointer;
 }
 
+
+
+.Offer_deal{
+    box-shadow: 3px 3px 10px 6px rgb(0,0,0,0.06);
+    background-color: rgb(167, 160, 160);
+    height: 500px;
+    margin-left: 100px;
+    width: 28%;
+    overflow-y: scroll;
+    
+}
+.Select_offer{
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: antiquewhite;
+    height: 50px;
+    width: 100%;
+}
+.my_calender{
+    padding: 20px;
+}
+.Detail{
+    padding: 20px;
+}
+.detail_lable{
+    margin-top: 20px;
+}
+.detail_name {
+    height: 40px;
+    width: 95%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+}
+.detail_mobile{
+    height: 40px;
+    width: 95%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+}
+.Counter{
+    display: flex;
+    width: 95%;
+    height: 50px;
+    background-color: aqua;
+    padding: 20px;
+    /* background-color: aqua;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px; */
+}
+.counter_display{
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+}
+.Counter .incbtn{
+    border: none;
+    border-radius: 10px;
+}
+.confirm_btn{
+    height: 50px;
+    width: 95%;
+    color: aliceblue;
+    background-color: #fc5d51;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
 
