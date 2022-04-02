@@ -3,7 +3,9 @@ import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -134,6 +136,8 @@ const Home = () => {
       </div>
       <div className="footer">
         <Footer />
+        <br />
+        <br />
       </div>
     </>
   );

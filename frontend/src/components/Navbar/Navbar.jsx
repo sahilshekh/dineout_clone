@@ -69,7 +69,9 @@ const Navbar = () => {
                 <Link to="">Dineout Pay</Link>
               </li>
               <li>
+
                 <Link to="/Dineoutpassport">Dineout Passport</Link>
+
               </li>
               <li>
                 <Link to="">Events</Link>
