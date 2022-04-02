@@ -1,61 +1,114 @@
 import React from "react";
+import { Login } from "../Register/Login";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { userLogin } from "../../Redux/Login/action";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const [model, setModel] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const token = useSelector((store) => store.login.token);
+  const [userToken, setUserToken] = useState(token);
+
+  const localStorageToken = localStorage.getItem("token");
+  dispatch(userLogin(localStorageToken));
+
+  const handleProfilePage = () => {
+    document.getElementById("signsub").style.display = "block";
+  };
+
+  const handleLogout = () => {
+    dispatch(userLogin({}));
+    localStorage.setItem("token", "");
+    localStorage.setItem("auth", JSON.stringify({}));
+    navigate("/");
+    window.location.reload();
+    setUserToken("");
+  };
+
+  const cityData = localStorage.getItem("cityData");
+  const city = JSON.parse(cityData);
+  const [cities, setCities] = useState(city);
+
   return (
     <>
       <div className="container">
         <div className="navbar-main">
           <div className="logo">
-            <a href="">
+            <Link to="/">
               <img
                 src="https://im1.dineout.co.in/images/uploads/misc/2019/Jul/25/website-logo.png"
                 alt="logo"
               />
-            </a>
+            </Link>
           </div>
           <div className="select">
             <select name="city" id="city-select">
-              <option value="volvo">Indore</option>
-              <option value="saab">Mumbai</option>
-              <option value="mercedes">Delhi</option>
-              <option value="audi">Banglore</option>
+              <option value="volvo">
+                {" "}
+                {cities ? cities : setCities("NO City Found")}
+              </option>
             </select>
           </div>
 
           <div className="list-items">
             <ul>
               <li>
-                <a href="" className="home-btn">
+                <Link to="/" className="home-btn">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                {/* <a href="">Book a Table</a> */}
                 <Link to="/Booktable">Book a Table</Link>
               </li>
               <li>
-                <a href="">Dineout Pay</a>
+                <Link to="">Dineout Pay</Link>
               </li>
               <li>
-              <Link to="/Dineoutpassport">Dineout Passport</Link>
+
+                <Link to="/Dineoutpassport">Dineout Passport</Link>
+
               </li>
               <li>
-                <a href="">Events</a>
+                <Link to="">Events</Link>
               </li>
               <li>
-                <a href="">Super Saver</a>
+                <Link to="">Super Saver</Link>
               </li>
               <li>
-                <a href="">Blog</a>
+                <Link to="">Blog</Link>
               </li>
             </ul>
           </div>
           <div className="btn">
-            <button>Login</button>
+            {!userToken ? (
+              <button onClick={() => setModel(true)}>Login</button>
+            ) : (
+              <div className="profile">
+                <p>
+                  My Account{" "}
+                  <span onClick={handleProfilePage}>
+                    {<ArrowDropDownIcon />}
+                  </span>
+                </p>
+                <div id="signsub">
+                  <Link to={"/profile"}>
+                    <p>Profile</p>
+                  </Link>
+                  <p>Coupon History</p>
+                  <p onClick={handleLogout}>Logout</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {model ? <Login closeModel={setModel} /> : null}
     </>
   );
 };
