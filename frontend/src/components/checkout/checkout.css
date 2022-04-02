@@ -201,10 +201,10 @@ body{
 .checki{
     margin: auto;
     margin-top: 10%;
-    
     border: 1px solid gray;
     width: 70%;
     height: 600px;
+    text-align: center;
 }
 .cheki1{
     

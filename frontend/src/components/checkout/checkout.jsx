@@ -27,9 +27,17 @@ function Checkout() {
                 <h1>{address}</h1>
            </div><hr />
            <div className='cheki1_guest'>
-            <h2>{Counter}</h2>
+            <h2>{Guestname}</h2>
+            <h2>{GuestMobile}</h2>
            </div>
-           <div className='cheki1_summery'></div>
+           <hr />
+           <div className='cheki1_summery'>
+      <h2>{Datetime}</h2>
+      <h2>{Counter}</h2>
+      <h2>{Guestname}</h2>
+        <h3>D015247509</h3>
+
+           </div>
    </div>
       
  
