@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import CreateIcon from "@mui/icons-material/Create";
 import EmailIcon from "@mui/icons-material/Email";
 import "./Profile.css";
+import SavingImg from "../Images/saving.png";
 const Profile = () => {
   const userData = JSON.parse(localStorage.getItem("auth"));
   // const [user, setUser] = useState(userData);
@@ -42,6 +43,13 @@ const Profile = () => {
             <div className="totaldin">
               <p>Total Dined : 0</p>
             </div>
+          </div>
+        </div>
+
+        <div className="profiledata-container">
+          <div className="profile"></div>
+          <div className="savings">
+            <img src={SavingImg} alt="imagesprofile" />
           </div>
         </div>
       </div>
