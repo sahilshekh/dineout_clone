@@ -13,15 +13,15 @@ const Offer = () => {
     const[counter,setcounter] = useState("");
     const saveGuestdata = () =>{
 
-       var Guestdata = []
-       var guestdata = {
+    //    var Guestdata = []
+       const guestdata = {
            Datetime:datetime,
            Guestname:guestname,
            GuestMobile:guestmobile,
            Counter:counter
        }
-       Guestdata.push(guestdata)
-       localStorage.setItem("Guestdata",JSON.stringify(Guestdata))
+    //    Guestdata.push(guestdata)
+       localStorage.setItem("guestdata",JSON.stringify(guestdata))
     }
 
     const getvalue = (v) =>{
