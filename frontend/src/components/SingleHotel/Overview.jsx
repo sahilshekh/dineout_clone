@@ -2,37 +2,53 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import './Overview.css'
 import review from './chrome-capture (21).jpg'
+import { useNavigate } from 'react-router';
 
 const Overview = () => {
 
-    const [state, setState] = useState([])
+    // const [state, setState] = useState([])
 
-    const [randomarr, setRandomarr] = useState([])
+    // const [randomarr, setRandomarr] = useState([])
+
+    // useEffect(() => {
+    //     fetch("http://localhost:5500/products")
+    //     .then((res) => res.json())
+    //     .then((res)=> {
+    //         setState([...res])
+        
+    //     });
+    //   }, []);
+
+    //   useEffect(()=>{
+    //     getRandom()
+    //   },[state])
+
+    //   const getRandom = () => {
+    //       let a1 = Math.floor(Math.random()*state.length)
+    //       let a2  = Math.floor(Math.random()*state.length)
+    //       let a3 = Math.floor(Math.random()*state.length)
+    //         setRandomarr([...randomarr,state[a1]])
+    //         setRandomarr([...randomarr,state[a2]])
+    //         setRandomarr([...randomarr,state[a3]])
+    //         console.log(state[a1],state[a2],state[a3])
+    //     }
+
+    //     const {images,title,place} = randomarr
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5500/products")
-        .then((res) => res.json())
-        .then((res)=> {
-            setState([...res])
-        
-        });
-      }, []);
+      axios.get("http://localhost:5500/products").then((res) => {
+        console.log(res.data);
+        setProducts([...res.data]);
+      });
+    }, []);
 
-      useEffect(()=>{
-        getRandom()
-      },[state])
+    const navigate = useNavigate();
 
-      const getRandom = () => {
-          let a1 = Math.floor(Math.random()*state.length)
-          let a2  = Math.floor(Math.random()*state.length)
-          let a3 = Math.floor(Math.random()*state.length)
-            setRandomarr([...randomarr,state[a1]])
-            setRandomarr([...randomarr,state[a2]])
-            setRandomarr([...randomarr,state[a3]])
-            console.log(state[a1],state[a2],state[a3])
-        }
-
-        
+    const handleHotel = (e) => {
+        localStorage.setItem("hotel", JSON.stringify(e));
+        navigate(`/Booktable/${e.title}`);
+      };
 
     return (
     <div className='overview'>
@@ -139,7 +155,27 @@ const Overview = () => {
         <div className='six'>
             <h3>You May Also Like</h3>
             <p>Checkout these great resturants</p>
-            Random Component Here
+            <div className='maylike'>
+            {products
+              .filter((_, index) => index % 8 === 5 )
+              .map((el) => {
+                return (
+                  <div
+                    className="random"
+                    key={el._id}
+                    onClick={() => handleHotel(el)}
+                  >
+                    <div className="random-img">
+                      <img src={el.images} alt="Restaurant" />
+                    </div>
+                    <div className="random-details">
+                      <h3>{el.title}</h3>
+                      <p>{el.address}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
         </div>
 
         <div className='seven'>
