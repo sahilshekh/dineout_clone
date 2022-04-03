@@ -157,6 +157,7 @@ height: 100%;
 
 .six{
     background-color:white;
+    height: 100%;
 }
 .six > h3{
     padding-top: 5px;
@@ -216,4 +217,25 @@ height: 100%;
 .help > span > p{
     margin-top: 0px;
     line-height: 80%;
+}
+.maylike{
+    display: flex;
+    justify-content: space-around;
+}
+.random-img{
+    margin-bottom: 0px;
+}
+.random-img > img{
+    width: 190px;
+    height: 150px;
+}
+.random-details{
+    margin-top: 0px;
+}
+.random-details > h3{
+    font-size: 15px;
+}
+.random-details > p{
+    text-align: center;
+    font-size: 14px;
 }
