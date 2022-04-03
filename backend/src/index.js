@@ -30,7 +30,7 @@ app.use("/buffet", buffetController)
 app.post("/register", register)
 app.post("/login", login)
 
-app.listen(5500, async () => {
+app.listen(process.env.PORT || 5500, async () => {
     try {
         await connect()
         console.log("listening on port 5500")

@@ -10,11 +10,19 @@ const Overview = () => {
 
     // const [randomarr, setRandomarr] = useState([])
 
+// <<<<<<< HEAD
     // useEffect(() => {
-    //     fetch("http://localhost:5500/products")
+    //     fetch("https://dineout-project.herokuapp.com/products")
     //     .then((res) => res.json())
     //     .then((res)=> {
     //         setState([...res])
+// =======
+//     useEffect(() => {
+//         fetch("https://dineout-project.herokuapp.com/products")
+//         .then((res) => res.json())
+//         .then((res)=> {
+//             setState([...res])
+// >>>>>>> 76ed6b352071f5d3117587d816b017b589cecb4a
         
     //     });
     //   }, []);
@@ -37,7 +45,7 @@ const Overview = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-      axios.get("http://localhost:5500/products").then((res) => {
+      axios.get("https://dineout-project.herokuapp.com/products").then((res) => {
         console.log(res.data);
         setProducts([...res.data]);
       });

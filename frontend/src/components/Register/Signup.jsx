@@ -181,7 +181,7 @@ export const Signup = ({ closeSignup, closeLogin }) => {
 
   const handleRegister = () => {
     axios
-      .post("http://localhost:5500/register", {
+      .post("https://dineout-project.herokuapp.com/register", {
         name: name,
         phone: phone,
       })

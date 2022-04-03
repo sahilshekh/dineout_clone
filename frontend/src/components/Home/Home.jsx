@@ -3,14 +3,16 @@ import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const navigate = useNavigate();
 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/products").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/products").then((res) => {
       console.log(res.data);
       setProducts([...res.data]);
     });
@@ -134,6 +136,8 @@ const Home = () => {
       </div>
       <div className="footer">
         <Footer />
+        <br />
+        <br />
       </div>
     </>
   );

@@ -12,7 +12,7 @@ function Dineout() {
   const [dineout, setDinprod]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/dineout").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/dineout").then((res) => {
       console.log(res.data);
       setDinprod([...res.data]);
     });

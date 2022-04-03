@@ -12,7 +12,7 @@ function PureVeg() {
   const [pureveg, setPureveg]= useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5500/pureveg").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/pureveg").then((res) => {
       console.log(res.data);
       setPureveg([...res.data]);
     });

@@ -3,18 +3,21 @@ import  './Booktable.css'
 // import Navbar from '../Navbar/Navbar'
 import axios from "axios";
 import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { FaGreaterThan } from "react-icons/fa";
 import Subnavbar from '../Subnavbar/Subnavbar';
 import '../Subnavbar/Navbar1.css'
 import {useNavigate} from "react-router-dom"
 
+
+
 function Booktable() {
   const [products, setProducts] = useState([]);
  
 
   useEffect(() => {
-    axios.get("http://localhost:5500/products").then((res) => {
+    axios.get("https://dineout-project.herokuapp.com/products").then((res) => {
       console.log(res.data);
       setProducts([...res.data]);
     });
@@ -25,7 +28,6 @@ function Booktable() {
   localStorage.setItem("hotel",JSON.stringify(e))
   navigate(`/Booktable/${e.title}`)
 }
-
 
   
   return (
@@ -95,7 +97,9 @@ function Booktable() {
                 {products
                   .map((el) => {
                     return (
+
                       <div className="hotelData-container" onClick={() =>handleHotel(el)} key={el._id}>
+
                         <img src={el.images} alt="Restaurant" />
                         <div className="hotelData-details">
                           <h3>{el.title}</h3>
