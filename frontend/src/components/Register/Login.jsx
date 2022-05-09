@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Signup } from "./Signup";
 import { useState } from "react";
 import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { userLogin } from "../../Redux/Login/action";
 import { useNavigate } from "react-router-dom";
 
@@ -95,9 +95,11 @@ const Style = styled.div`
       text-align: left;
     }
   }
-  .oath_links {
+  .oath_links1 {
     display: flex;
     justify-content: space-between;
+    margin-top: 10%;
+
     .gmail {
       height: 40px;
       width: 176px;
@@ -135,7 +137,8 @@ const Style = styled.div`
       }
     }
   }
-  .end_line {
+  .end_line1 {
+    margin-top: 10%;
     p {
       font-size: 14px;
       line-height: 20px;
@@ -172,8 +175,6 @@ export const Login = ({ closeModel }) => {
     document.getElementsByClassName("modelback")[0].style.display = "none";
   };
 
-  const token = useSelector((store) => store.login.token);
-
   const dispatch = useDispatch();
 
   const handleLogin = () => {
@@ -184,10 +185,8 @@ export const Login = ({ closeModel }) => {
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token);
-        const localStorageToken = localStorage.getItem("token");
-        dispatch(userLogin(localStorageToken));
+        dispatch(userLogin(response.data.token));
         closeModel(false);
-        window.location.reload();
       });
   };
   const localStorageToken = localStorage.getItem("token");
@@ -230,7 +229,7 @@ export const Login = ({ closeModel }) => {
             <p>Or login via</p>
             <span></span>
           </div>
-          <div className="oath_links">
+          <div className="oath_links1">
             <div className="gmail">
               <svg
                 width="16"
@@ -274,7 +273,7 @@ export const Login = ({ closeModel }) => {
               <p>Facebook</p>
             </div>
           </div>
-          <div className="end_line">
+          <div className="end_line1">
             <p>
               Don't have an account?{" "}
               <span onClick={handleToogle}>Create one</span>
