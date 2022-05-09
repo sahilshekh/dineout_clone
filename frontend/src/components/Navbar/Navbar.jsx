@@ -12,7 +12,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((store) => store.login.token);
-  const [userToken, setUserToken] = useState(token);
 
   const localStorageToken = localStorage.getItem("token");
   dispatch(userLogin(localStorageToken));
@@ -24,9 +23,8 @@ const Navbar = () => {
   const handleLogout = () => {
     dispatch(userLogin({}));
     localStorage.setItem("token", "");
-    localStorage.setItem("auth", JSON.stringify({}));
+    localStorage.setItem("auth", "");
     navigate("/");
-    setUserToken("");
   };
 
   const cityData = localStorage.getItem("cityData");
@@ -82,7 +80,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="btn">
-            {!userToken ? (
+            {!token ? (
               <button onClick={() => setModel(true)}>Login</button>
             ) : (
               <div className="profile">

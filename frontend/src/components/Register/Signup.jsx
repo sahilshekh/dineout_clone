@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import { auth } from "../Firebase/Firebase.confiq";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../Redux/Login/action";
 
 const Style = styled.div`
   .modelback {
@@ -170,6 +172,7 @@ const Style = styled.div`
 export const Signup = ({ closeSignup, closeLogin }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const dispatch = useDispatch();
 
   const closeSignupModel = () => {
     closeSignup(false);
@@ -202,8 +205,8 @@ export const Signup = ({ closeSignup, closeLogin }) => {
         console.log(res);
         localStorage.setItem("auth", JSON.stringify(res.user));
         localStorage.setItem("token", res.user.stsTokenManager.accessToken);
+        dispatch(userLogin(res.user.stsTokenManager.accessToken));
         closeSignup(false);
-        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
