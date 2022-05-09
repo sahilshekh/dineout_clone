@@ -26,7 +26,6 @@ const Navbar = () => {
     localStorage.setItem("token", "");
     localStorage.setItem("auth", JSON.stringify({}));
     navigate("/");
-    window.location.reload();
     setUserToken("");
   };
 
@@ -69,9 +68,7 @@ const Navbar = () => {
                 <Link to="">Dineout Pay</Link>
               </li>
               <li>
-
                 <Link to="/Dineoutpassport">Dineout Passport</Link>
-
               </li>
               <li>
                 <Link to="">Events</Link>

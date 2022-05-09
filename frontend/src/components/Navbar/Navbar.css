@@ -12,7 +12,9 @@
   width: 85%;
   margin: auto;
 }
-
+.list-items {
+  margin-right: 5%;
+}
 .list-items ul {
   display: flex;
   list-style: none;
@@ -23,7 +25,7 @@
 .list-items ul li a {
   color: black;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 15px;
   position: relative;
   font-weight: 400;
 }
@@ -102,8 +104,7 @@
   position: relative;
 }
 .profile p {
-  padding-top: 5px;
-  font-size: 12px;
+  font-size: 15px;
   display: flex;
   align-items: center;
 }
