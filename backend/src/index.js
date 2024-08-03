@@ -1,40 +1,42 @@
 const express = require("express");
-
-const cors = require("cors")
+const cors = require("cors");
 
 const app = express();
 
-const connect = require("./configs/db")
-const productControler = require("./controller/productControler")
+const connect = require("./configs/db");
+const productController = require("./controllers/productController");
 
-const starController = require("./controller/starController")
-const northindiaController = require("./controller/northindiacontroller")
-const chineseController = require("./controller/chineseController")
-const fastfoodController = require("./controller/fastfoodController")
-const { register, login } = require("./controller/userController")
+const starController = require("./controllers/starController");
+const northIndiaController = require("./controllers/northIndiaController");
+const chineseController = require("./controllers/chineseController");
+const fastFoodController = require("./controllers/fastFoodController");
+const { register, login } = require("./controllers/userController");
 
-app.use(cors())
-app.use("/star", starController)
-app.use("/northindia", northindiaController)
-app.use("/chinese", chineseController)
-app.use("/fastfood", fastfoodController)
+app.use(cors());
+app.use(express.json());
+app.use("/star", starController);
+app.use("/northindia", northIndiaController);
+app.use("/chinese", chineseController);
+app.use("/fastfood", fastFoodController);
 
-const dineoutController = require("./controller/dineoutController")
-const PureVegController = require("./controller/PureVegController")
-const buffetController = require("./controller/buffetController")
-app.use(express.json())
-app.use("/products", productControler)
-app.use("/dineout", dineoutController)
-app.use("/pureveg", PureVegController)
-app.use("/buffet", buffetController)
-app.post("/register", register)
-app.post("/login", login)
+const dineoutController = require("./controllers/dineoutController");
+const pureVegController = require("./controllers/pureVegController");
+const buffetController = require("./controllers/buffetController");
+
+app.use("/products", productController);
+app.use("/dineout", dineoutController);
+app.use("/pureveg", pureVegController);
+app.use("/buffet", buffetController);
+app.post("/register", register);
+app.post("/login", login);
 
 app.listen(process.env.PORT || 5500, async () => {
     try {
-        await connect()
-        console.log("listening on port 5500")
+        await connect();
+        console.log("Listening on port 5500");
     } catch (error) {
-        console.error("error", error.message)
+        console.error("Error:", error.message);
     }
-})
+});
+
+module.exports = app; // Export the app for serverless functions
